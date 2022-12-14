@@ -52,7 +52,24 @@ https://user-images.githubusercontent.com/112603386/207701316-f26428f6-9e98-4399
 We can see above that the design is working properly. The LEDs all work and when a black key is pressed the 2 surrounding LEDs light up at the same time.
 
 4. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
+
 5. Video of someone using your project
+  
+  We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
+  
+  Here is a test with one user where you unfortunately can not see my fingers leading him from the LEDs on his piano. The left wall of the student piano is being blocking the right LEDs and his body is blocking my hand while I play. However you can still see an interaction here:
+  
+
+https://user-images.githubusercontent.com/112603386/207703890-32ca8f64-c52b-4e9d-b117-49368c32c527.mov
+
+Here is another user test where the user was filming with unfortunately a very low quality camera. However the interaction can still be seen:
+
+
+
+https://user-images.githubusercontent.com/112603386/207704002-e08ac922-6cd1-4f9e-933d-ad9c8a11f371.mp4
+
+
+
 6. Reflections on process (What have you learned or wish you knew at the start?)
 
 7. Group work distribution questionnaire
