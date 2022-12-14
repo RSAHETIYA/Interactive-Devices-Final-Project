@@ -53,16 +53,19 @@ We can see above that the design is working properly. The LEDs all work and when
 
 4. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
 
+All code can be found in the Github files listed at the top of this repository. PianoTutor is the code that makes the pianos make sounrs. Tramsmitter and Receiver is the code that allows the pianos to talk to one another so they can control each others LEDs remotely. 
+
 5. Video of someone using your project
   
   We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
   
-  Here is a test with one user where you unfortunately can not see my fingers leading him from the LEDs on his piano. The left wall of the student piano is being blocking the right LEDs and his body is blocking my hand while I play. However you can still see an interaction here:
+Below is a test with one user where the video unfortunately starts after I tought our user the C Blues scale using the LEDs and him not looking at my fingers. While this part of the interaction was not captured, the second half of our interaction was captured where we are still both interacting with each piano and I am showing him more functionality of how the piano can arpeggiate notes in a fun way.
   
 
 https://user-images.githubusercontent.com/112603386/207703890-32ca8f64-c52b-4e9d-b117-49368c32c527.mov
 
-Here is another user test where the user was filming with unfortunately a very low quality camera. However the interaction can still be seen:
+
+Here is another user test where the user was unfortunately filming with a very low quality camera. However the interaction can still be seen:
 
 
 
@@ -71,5 +74,9 @@ https://user-images.githubusercontent.com/112603386/207704002-e08ac922-6cd1-4f9e
 
 
 6. Reflections on process (What have you learned or wish you knew at the start?)
+ We wish we had known that the multiplexor implementation would prove to be so difficult to get working correctly. If we had known this we would have spent that time improving the keys and making them 3D rather than 2D. While the 2D implementation works the same way in terms of functionality, we believe 3D keys would be more fun for our users.
+ 
+ We learned that sometimes people get excited about unintended outcomes of a project. Because the musical library we used to form the synth sounds did not play multiple notes at once, we used a while loop to loop through sounds when a user plays a chord. This made an arpeggiated chord instead of a continuous one. This was a workaround for us to be able to play all the notes someone presses as long as they hold the chord out long enough for the code to loop through each held note. However, we learned when user testing that this was often a favorite feature of our users. It made them feel more talented at piano because of how fast the notes were playing. One lesson learned here is how important user testing is; what was a side feature to us the designers was a showcase feature to the users themselves.
 
 7. Group work distribution questionnaire
+ Both of us, Sam and Rahul, shared the work fairly well on all aspects of the project. We both talked about the idea behind the product, we both talked about what parts to order, we both worked on the code, we both worked on the housing, we both worked on the soldering, we both worked on the spacing of the LEDs, we both worked on the actual taping of the copper tape to the piano keys, and we both tested with users seperately. We communicated early and often and overall the team was a success.
