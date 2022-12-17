@@ -6,7 +6,7 @@ Project: Teaching Pianos
 
 Project Group: Sam Willenson and Rahul Sahetiya
 
-Description: Built a functional prototype where one piano is the dedicated student and the other is the dedicated teacher. Teacher piano is capable of playing piano notes and sending respective data to student piano. Student piano is capable of displaying the notes received on the respective LEDs. Unable to create bidirectional sending (although code is there for the function), as decoder got delayed in shipping. This created a physical constraint with respect to our GPIO pins/miniTFT covering some to power all LEDs. Finally, for the housing, vector file has been created and are planning to laser cut in the next two days to complete assembly. Decoder will also arrive tomorrow.
+Description: Built a functional prototype where one piano is the dedicated student and the other is the dedicated teacher. The teacher piano is capable of playing piano notes and sending respective data to a student piano. The student piano is capable of displaying the notes received on the respective LEDs. Unable to create bidirectional sending (although code is there for the function), as decoder got delayed in shipping. This created a physical constraint with respect to our GPIO pins/miniTFT covering some to power all LEDs. Finally, for the housing, vector file has been created and are planning to laser cut in the next two days to complete assembly. Decoder will also arrive tomorrow.
 
 Video:
 https://youtu.be/KECurauWU70
@@ -16,7 +16,7 @@ Final Submission:
 Project plan: Big idea, timeline, parts needed, fall-back plan.
 Big Idea:
 
-We will be creating two pianos that will be linked together to facilitate a teaching experience. Keys played on one piano will translate into LEDs turning on above the keys of the other piano, and vice versa. Eventually, we intend to add a secondary mode to these pianos, where users can play a game of musical Simon using the keyboards. This adds another way to interact with the devices, as well as a gamification twist on standard education methods. Simon can be used as a way to test students’ ability to add onto a group of notes and stay within key.
+We will be creating two pianos that will be linked together to facilitate a teaching experience. Keys played on one piano will translate into LEDs turning on above the keys of the other piano, and vice versa. The theory and motivation behind this is that learning music can be difficult. By seeing explicit LEDs light up above each key on a keyboard, it will make it much easier for a musician to learn songs, whether they are a beginner or an advanced player. Beginners will be able to use this device by having an instructor show them where to place their fingers, while the students are still looking down at their own hands. Currently, students have to take their eyes off of their own instrument to learn which notes to play which can hinder the ability of a student to learn quickly and effectively. Advanced musicians can use this device to more easily communicate what notes they are playing to each other, or help a musician if they are lost during a song. In the future, we intend to add a secondary mode to these pianos, where users can play a game of musical Simon using the keyboards. This adds another way to interact with the devices, as well as a gamification twist on standard education methods. Simon can be used as a way to test students’ ability to add onto a group of notes and stay within key.
 
 Timeline:
 
