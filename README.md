@@ -1,19 +1,9 @@
 # Interactive-Devices-Final-Project
 
-Functional Checkoff:
-
-Project: Teaching Pianos
-
-Project Group: Sam Willenson and Rahul Sahetiya
-
-Description: Built a functional prototype where one piano is the dedicated student and the other is the dedicated teacher. The teacher piano is capable of playing piano notes and sending respective data to a student piano. The student piano is capable of displaying the notes received on the respective LEDs. Unable to create bidirectional sending (although code is there for the function), as decoder got delayed in shipping. This created a physical constraint with respect to our GPIO pins/miniTFT covering some to power all LEDs. Finally, for the housing, vector file has been created and are planning to laser cut in the next two days to complete assembly. Decoder will also arrive tomorrow.
-
-Video:
-https://youtu.be/KECurauWU70
-
 Final Submission:
 
 Project plan: Big idea, timeline, parts needed, fall-back plan.
+
 Big Idea:
 
 We will be creating two pianos that will be linked together to facilitate a teaching experience. Keys played on one piano will translate into LEDs turning on above the keys of the other piano, and vice versa. The theory and motivation behind this is that learning music can be difficult. By seeing explicit LEDs light up above each key on a keyboard, it will make it much easier for a musician to learn songs, whether they are a beginner or an advanced player. Beginners will be able to use this device by having an instructor show them where to place their fingers, while the students are still looking down at their own hands. Currently, students have to take their eyes off of their own instrument to learn which notes to play which can hinder the ability of a student to learn quickly and effectively. Advanced musicians can use this device to more easily communicate what notes they are playing to each other, or help a musician if they are lost during a song. In the future, we intend to add a secondary mode to these pianos, where users can play a game of musical Simon using the keyboards. This adds another way to interact with the devices, as well as a gamification twist on standard education methods. Simon can be used as a way to test students’ ability to add onto a group of notes and stay within key.
@@ -44,6 +34,8 @@ The biggest stretch for this project is making and implementing the Simon game f
 
 
 2. Functioning project: The finished project should be a device, system, interface, etc. that people can interact with.
+
+The device was finished and works; we show several successful interactions in the sections below.
 
 3. Documentation of design process
 
@@ -87,14 +79,12 @@ All code can be found in the Github files listed at the top of this repository. 
   
   We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
   
-Below is a test with one user where the video unfortunately starts after I tought our user the C Blues scale using the LEDs and him not looking at my fingers. While this part of the interaction was not captured, the second half of our interaction was captured where we are still both interacting with each piano and I am showing him more functionality of how the piano can arpeggiate notes in a fun way.
-  
 Here is a demo video of how an interaction can work to teach someone the C Blues scale on a piano without looking at each other hands, only using the device as intended:
 
 
 https://user-images.githubusercontent.com/112603386/208215125-62527cbc-b175-450a-87de-98e385223295.mov
 
-Here is a user test from class:
+Below is a test with one user where the video unfortunately starts after I tought our user the C Blues scale using the LEDs and him not looking at my fingers. While this part of the interaction was not captured, the second half of our interaction was captured where we are still both interacting with each piano and I am showing him more functionality of how the piano can arpeggiate notes in a fun way.
 
 https://user-images.githubusercontent.com/112603386/207703890-32ca8f64-c52b-4e9d-b117-49368c32c527.mov
 
