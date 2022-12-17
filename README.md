@@ -42,7 +42,8 @@ The device was finished and works; we show several successful interactions in th
 
 ## 3. Documentation of design process
 
-First we had to design our Piano Box, laser cut it, and glue it together.
+First we had to design our Piano Box, laser cut it, and glue it together. We went through multiple prototyping phases before settling in on a final design. 
+![designs](/imgs/prototype_designs.jpeg)
 We designed our box to have a base of 7 inches by 11 inches, with a height of 4 inches. We used finger edge joints so that each face of the box would fit together well. We cut the roof of the device in half so that we could give our device more of a piano look. This also let the front face of the device sit halfway into the depth of the box giving it the correct cosmetic look of a piano. The front face of the box has 12 holes for the LEDs to sit in. Each of these holes has to fit a 3mm diameter LED, so we made the holes 3.5 mm to account for error. Below is both an image of the vector file in addition to the intial assembly of the enclosure.
 
 ![boxVecotr](/imgs/enclosure_vector.png)
@@ -66,11 +67,12 @@ After we figured this out we cut a hole in the back of our piano boxes to be abl
 
 Now we attached the LEDs on the protoboards to the inside of the front face of our board, taped them down to be secure, and fit in the Raspberry Pi with all the alligator clips attached to a MFR capacitive touch sensor board. 
 
-
+![front](/imgs/front_view.jpg)
+![side](/imgs/side_view.jpg)
+![internal](/imgs/internal_view.jpg)
 ![bothNoTop](https://user-images.githubusercontent.com/112603386/207701128-3e72a2a3-2f06-410e-983f-fbf2c40d9311.jpeg)
 
 Next we use an mpr121 capacitive touch sensor attached  With all the alligator clips attached to our copper 2D piano keys, we are ready to test.
-
 
 https://user-images.githubusercontent.com/112603386/207701316-f26428f6-9e98-4399-bb6e-1b2f7bd7c155.mp4
 
