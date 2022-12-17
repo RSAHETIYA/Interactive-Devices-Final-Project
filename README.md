@@ -1,46 +1,51 @@
 # Interactive-Devices-Final-Project
 
-Final Submission:
+## 1. Project plan: Big idea, timeline, parts needed, fall-back plan.
 
-Project plan: Big idea, timeline, parts needed, fall-back plan.
-
-Big Idea:
+### Big Idea:
 
 We will be creating two pianos that will be linked together to facilitate a teaching experience. Keys played on one piano will translate into LEDs turning on above the keys of the other piano, and vice versa. The theory and motivation behind this is that learning music can be difficult. By seeing explicit LEDs light up above each key on a keyboard, it will make it much easier for a musician to learn songs, whether they are a beginner or an advanced player. Beginners will be able to use this device by having an instructor show them where to place their fingers, while the students are still looking down at their own hands. Currently, students have to take their eyes off of their own instrument to learn which notes to play which can hinder the ability of a student to learn quickly and effectively. Advanced musicians can use this device to more easily communicate what notes they are playing to each other, or help a musician if they are lost during a song. In the future, we intend to add a secondary mode to these pianos, where users can play a game of musical Simon using the keyboards. This adds another way to interact with the devices, as well as a gamification twist on standard education methods. Simon can be used as a way to test students’ ability to add onto a group of notes and stay within key.
 
-Timeline:
+### Timeline:
 
-Week 1 (11/15 - 11/22): Make sure all parts needed are available/ order parts that are not readily available Look into music libraries and communication protocols to use Design both keyboards and possibly start prototyping
+1. Week 1 (11/15 - 11/22): Make sure all parts needed are available/ order parts that are not readily available Look into music libraries and communication protocols to use Design both keyboards and possibly start prototyping
 
-Week 2 (11/22 - 11/29) - “Demonstrate that your project is functioning well enough for somebody to use and interact with it. This presentation will just be to the teaching team.” Finish writing code for music functionality of piano Finish writing code for LED representations Complete building two rough prototypes of pianos Demonstrate functionality with one “teaching” piano and one “learning” piano
+2. Week 2 (11/22 - 11/29) - “Demonstrate that your project is functioning well enough for somebody to use and interact with it. This presentation will just be to the teaching team.” Finish writing code for music functionality of piano Finish writing code for LED representations Complete building two rough prototypes of pianos Demonstrate functionality with one “teaching” piano and one “learning” piano
 
-Week 3 (11/29 - 12/6): Polish both prototypes Expand functionality to allow for teaching to work both ways Develop Simon game if time permits
+3. Week 3 (11/29 - 12/6): Polish both prototypes Expand functionality to allow for teaching to work both ways Develop Simon game if time permits
 
-Week 4 (12/6 - 12/13): Complete documentation and other written parts as needed
+4. Week 4 (12/6 - 12/13): Complete documentation and other written parts as needed
 
-Parts Needed:
+### Parts Needed:
 
-The part we are envisioning to use are:
+The parts we are envisioning to use are:
 
-Cardboard, Laser cutter or normal cutting tools, Copper tape as electrolytic contacts, Capacitive touch sensor, Wire to route between sensor and contacts, LED lights (ideally x24 for full octave on both pianos), 2x LCD screen, Speakers
+- Cardboard
+- Laser cutter or normal cutting tools
+- Copper tape as electrolytic contacts
+- Capacitive touch sensor, Wire to route between sensor and contacts
+- LED lights (ideally x24 for full octave on both pianos)
+- 2x LCD screen, Speakers
 
-Risks/Contingencies:
+### Risks/Contingencies:
 
 Multi-key press if user is not precise with playing motions (user accidentally touches note they do not intend to play i.e. pinky grazes a black key when going for a C note. This can trigger an unintended note to be played) Simon game proves too difficult to develop Can’t acquire all parts in time Program to control music functionality is inefficient causing a delayed sound Messaging protocol in use is very delayed/high latency
 
-Fall-back plan:
+### Fall-back plan:
 
 The biggest stretch for this project is making and implementing the Simon game functionality. If unable to, given our current plans, we should still be able to complete and polish two keyboards that have teaching/learning functionality. It also might not be feasible to implement the teaching/learning both ways, so we will need to fall back to one piano being dedicated for learning and the other piano being dedicated to teaching. If we encounter some errors with the capacitive touch sensing, it should still be possible to simulate a good key press system using normal buttons or maybe limit switches.
 
 
-2. Functioning project: The finished project should be a device, system, interface, etc. that people can interact with.
+## 2. Functioning project: The finished project should be a device, system, interface, etc. that people can interact with.
 
 The device was finished and works; we show several successful interactions in the sections below.
 
-3. Documentation of design process
+## 3. Documentation of design process
 
 First we had to design our Piano Box, laser cut it, and glue it together.
-We designed our box to have a base of 7 inches by 11 inches, with a height of 4 inches. We used finger edge joints so that each face of the box would fit together well. We cut the roof of the device in half so that we could give our device more of a piano look. This also let the front face of the device sit halfway into the depth of the box giving it the correct cosmetic look of a piano. The front face of the box has 12 holes for the LEDs to sit in. Each of these holes has to fit a 3mm diameter LED, so we made the holes 3.5 mm to account for error.
+We designed our box to have a base of 7 inches by 11 inches, with a height of 4 inches. We used finger edge joints so that each face of the box would fit together well. We cut the roof of the device in half so that we could give our device more of a piano look. This also let the front face of the device sit halfway into the depth of the box giving it the correct cosmetic look of a piano. The front face of the box has 12 holes for the LEDs to sit in. Each of these holes has to fit a 3mm diameter LED, so we made the holes 3.5 mm to account for error. Below is both an image of the vector file in addition to the intial assembly of the enclosure.
+
+![boxVecotr](/imgs/enclosure_vector.png)
 
 ![emptyBox](https://user-images.githubusercontent.com/112603386/207697881-3df0dcbc-65dd-4b0e-9f24-cb697f526d99.jpeg)
 
@@ -71,18 +76,17 @@ https://user-images.githubusercontent.com/112603386/207701316-f26428f6-9e98-4399
 
 We can see above that the design is working properly. The LEDs all work and when a black key is pressed the 2 surrounding LEDs light up at the same time.
 
-4. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
+## 4. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
 
-All code can be found in the Github files listed at the top of this repository. PianoTutor is the code that makes the pianos make sounrs. Tramsmitter and Receiver is the code that allows the pianos to talk to one another so they can control each others LEDs remotely. 
+With respect to the components used in the final design, there are two: the enclosure and code powering the project. The .svg (vector file) of the enclosure is located [here](/enclosure/box2.0.svg) and the final version of the code is located [here](/src/final_project.py). There were other parts to the project, and they are covered extensively in the previous documentation section.
 
-5. Video of someone using your project
+## 5. Video of someone using your project
 
 Here is a storybaord of how an intended interaction would look like:
 
 ![pianoStoryboard](https://user-images.githubusercontent.com/112603386/208217610-31778336-420b-4e92-ad8a-a2959d0a41bd.png)
 
-  
-  We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
+We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
   
 Here is a demo video of how an interaction can work to teach someone the C Blues scale on a piano without looking at each other hands, only using the device as intended:
 
@@ -102,18 +106,18 @@ https://user-images.githubusercontent.com/112603386/207704002-e08ac922-6cd1-4f9e
 
 
 
-6. Reflections on process (What have you learned or wish you knew at the start?)
- We wish we had known that the multiplexor implementation would prove to be so difficult to get working correctly. If we had known this we would have spent that time improving the keys and making them 3D rather than 2D. While the 2D implementation works the same way in terms of functionality, we believe 3D keys would be more fun for our users.
- 
-I learned that sometimes people get excited about unintended outcomes of a project. Because the musical library we used to form the synth sounds did not play multiple notes at once, we used a while loop to loop through sounds when a user plays a chord. This made an arpeggiated chord instead of a continuous one. This was a workaround for us to be able to play all the notes someone presses as long as they hold the chord out long enough for the code to loop through each held note. However, we learned when user testing that this was often a favorite feature of our users. It made them feel more talented at piano because of how fast the notes were playing. One lesson learned here is how important user testing is; what was a side feature to us the designers was a showcase feature to the users themselves.
+## 6. Reflections on process (What have you learned or wish you knew at the start?)
+We learned that sometimes people get excited about unintended outcomes of a project. Because the musical library we used to form the synth sounds did not play multiple notes at once, we used a loop to continuosly loop through sounds when a user plays a chord. This made an arpeggiated chord instead of a continuous one. This was a workaround for us to be able to play all the notes someone presses as long as they hold the chord out long enough for the code to loop through each held note. However, we learned when user testing that this was often a favorite feature of our users. It made them feel more talented at piano because of how fast the notes were playing. One lesson learned here is how important user testing is; what was a side feature to us the designers was a showcase feature to the users themselves.
 
-I also learned that detailed planning before the start of an experiment is extremely important. While we did prototype before we started laser cutting, there were a few things we overlooked. We forgot to add a slot to snake out the power cords and webcam cords. This was fine in the end but we had to make a cut by hand, it could have been much more precise if we designed this into our laser cutting file.
+We also learned that detailed planning before the start of an experiment is extremely important. While we did prototype before we started laser cutting, there were a few things we overlooked. We forgot to add a slot to snake out the power cords and webcam cords. This was fine in the end but we had to make a cut by hand, it could have been much more precise if we designed this into our laser cutting file.
 
-I also learned to to efficiently have 2 raspberry pis communicate wirelessly with one another. Further than this project that functionality can have many implications with very neat use cases.
+We also learned to to efficiently have 2 raspberry pis communicate wirelessly with one another. While we did experiment with UDP and other network protocols, we did eventually end up going back to MQTT as it was lightweight and easy to use based on past experience. Further than this project that functionality can have many implications with very neat use cases. 
 
-One thing I wish I knew at the start of the project was that our implementation of the multiplexor would not end up working. We spent a long time trying to get the multiplexor working and in the end had to pivot and think of a creative way to signify each key individually using a maximum of 9 GPIO outputs which corresponds to 9 LEDs that we can toggle on/off. If I knew that time spent on the multiplexor would be for nothing, I would have used that time to make our keys 3 dimensional rather than 2 dimensional with copper tape. I believe the 3 dimensional keys would have made the user experience with our device more interactive and fun.
+One thing we wish we knew at the start of the project was that our implementation of the multiplexor would not end up working. We spent a long time trying to get the multiplexor working and in the end had to pivot and think of a creative way to signify each key individually using a maximum of 9 GPIO outputs which corresponds to 9 LEDs that we can toggle on/off. If we knew that time spent on the multiplexor would be for nothing, we would have used that time to make our keys 3 dimensional rather than 2 dimensional with copper tape. We believe the 3 dimensional keys would have made the user experience with our device more interactive and fun.
 
-Another thing I wish I knew was how important having the higher octave C note would be. We only had 12 keys meaning we had one key for every note in a chromatic scale, however many songs use 2 of the same note. I wish we would have added more keys but this was difficult due to the mpr121 sensor only having 12 inputs as well as our bottleneck on GPIO pins.
+Another thing we wish we knew was how important having the higher octave C note would be. We only had 12 keys meaning we had one key for every note in a chromatic scale, however many songs use 2 of the same note. We wish we would have added more keys but this was difficult due to the mpr121 sensor only having 12 inputs as well as our bottleneck on GPIO pins.
 
-7. Group work distribution questionnaire
- Both of us, Sam and Rahul, shared the work fairly well on all aspects of the project. We both talked about the idea behind the product, we both talked about what parts to order, we both worked on the code, we both worked on the housing, we both worked on the soldering, we both worked on the spacing of the LEDs, we both worked on the actual taping of the copper tape to the piano keys, and we both tested with users seperately. We communicated early and often and overall the team was a success.
+Overall, we believe that while we did fail to implement some aspects of our project plan that would have enhanced the overall user process, we did come up with some creative workarounds that eventually led to a final project we are proud of.
+
+## 7. Group work distribution questionnaire
+Both of us, Sam and Rahul, shared the work on all aspects of the project. We both talked about the idea behind the product, we both talked about what parts to order, we both worked on the code, we both worked on the housing, we both worked on the soldering, we both worked on the spacing of the LEDs, we both worked on the actual taping of the copper tape to the piano keys, and we both tested with users seperately. While distribution of each task was not entirely equal, we did play to our respective strengths to be more efficient. We communicated early and often, and overall, the team was a success.
