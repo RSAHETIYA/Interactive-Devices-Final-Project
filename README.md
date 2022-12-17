@@ -20,12 +20,18 @@ We will be creating two pianos that will be linked together to facilitate a teac
 
 The parts we are envisioning to use are:
 
-- Cardboard
-- Laser cutter or normal cutting tools
-- Copper tape as electrolytic contacts
-- Capacitive touch sensor, Wire to route between sensor and contacts
-- LED lights (ideally x24 for full octave on both pianos)
-- 2x LCD screen, Speakers
+- Hardware:
+    - Cardboard
+    - Laser cutter or normal cutting tools
+    - Copper tape as electrolytic contacts
+    - Capacitive touch sensor, Wire to route between sensor and contacts
+    - LED lights (ideally x24 for full octave on both pianos)
+    - 2x LCD screen, Speakers
+- Software:
+    - UDP or MQTT networking protocol
+    - GPIO Pins
+    - MusicalBeeps Library
+    - MPR121 library
 
 ### Risks/Contingencies:
 
@@ -52,16 +58,16 @@ We designed our box to have a base of 7 inches by 11 inches, with a height of 4 
 
 The keys of our device extends from the back of the box to the front, hanging over the front of the base by around 2.5 inches. Again, this is to give our box the look and feel of a real piano. We had an idea for how to make the keys 3 dimensional, but after hitting a few roadblocks and time constraints, we chose to pivot to a 2-dimensional key implementation. Our keyboard was a piece of cardboard, cut to the dimensions of the box, that we hand-drew piano keys onto. Because we only used 12 keys we made the keys as big as they could be for the size of the housing. We then taped copper tape to the top side of our cardboard so we could attach a capacitive touch sensor to this keyboard. By then attaching alligator clips from the mpr121 capacitive touch sensor to each individual key, we are able to decipher the inputs from our users.
 
-Next we had to add all of our LEDs to the product. The goal was to have a dedicated LED for each of the 12 keys in a musical octave, however due to the lack of available GPIO pins on each of our Raspberry Pis we ran into an issue. Our TFT screens (which are used to connect the raspberry pi to the mp121 capacitive touch sensor) were taking up some of these GPIO pins so we were left with only 9 per Raspberry Pi. To fix this issue we planned on implementing a multiplexor to split the logic from some of these GPIO pins to make the voltage levels control multiple LEDs.
+Next we had to add all of our LEDs to the product. The goal was to have a dedicated LED for each of the 12 keys in a musical octave, however due to the lack of available GPIO pins on each of our Raspberry Pis we ran into an issue. Our TFT screens (which are used to connect the raspberry pi to the mp121 capacitive touch sensor) were taking up some of these GPIO pins so we were left with only 9 per Raspberry Pi. To fix this issue we planned on implementing a decoder to split the logic from some of these GPIO pins to make the voltage levels control multiple LEDs.
 
-Here are images of us soldering the multiplexor into the design:
+Here are images of us soldering the decoder into the design:
 ![rahulSolder](https://user-images.githubusercontent.com/112603386/207697928-e46965c9-dac7-4272-afa0-d3eaf6409a40.jpeg)
 ![rahulSolder2](https://user-images.githubusercontent.com/112603386/207697944-68baeb96-61be-4764-ab2a-2d3b2b9b1086.jpeg)
 ![solderCloseup](https://user-images.githubusercontent.com/112603386/207697970-42d0a780-90ec-462d-a4c4-4adda17cc601.jpeg)
 
 We are both eperienced at soldering, but we made one mistake - assuming the Maker Lab had Leaded solder. Because of the lack of Lead solder, this whole process proved to be more time consuming and difficult than originally expected. When our first board was finished, we tested the device to see if each LED can be powered on individually. Unfortunately, something unexpected was happening and we were getting unexpected LEDs turning on: for example LED 5 powering on when we want LED 2 on, and multiple LEDs powering on at the same time. 
 
-To fix this issue we brainstormed how we might be able to pivot to not using the multiplexor. How could we best represent each of the 12 keys with only 9 available GPIO pins. We came up with an idea that would be symmetrical and evenly distributed across the board. Instead of having each note be represented by it's own individual LED, we will have only the white keys with LEDs housed above them. This way when a user hits a black key, this can be represented by the surrounding white keys to the left and right of this black key light up. Now single LEDs represent white keys, and double LEDs represent black keys (in the middle of the 2 LEDs).
+To fix this issue we brainstormed how we might be able to pivot to not using the decoder. How could we best represent each of the 12 keys with only 9 available GPIO pins. We came up with an idea that would be symmetrical and evenly distributed across the board. Instead of having each note be represented by it's own individual LED, we will have only the white keys with LEDs housed above them. This way when a user hits a black key, this can be represented by the surrounding white keys to the left and right of this black key light up. Now single LEDs represent white keys, and double LEDs represent black keys (in the middle of the 2 LEDs).
 
 After we figured this out we cut a hole in the back of our piano boxes to be able to snake out the power cord and webcam (which is used as a speaker for this device) cables out of the back.
 
@@ -72,7 +78,7 @@ Now we attached the LEDs on the protoboards to the inside of the front face of o
 ![internal](/imgs/internal_view.jpg)
 ![bothNoTop](https://user-images.githubusercontent.com/112603386/207701128-3e72a2a3-2f06-410e-983f-fbf2c40d9311.jpeg)
 
-Next we use an mpr121 capacitive touch sensor attached  With all the alligator clips attached to our copper 2D piano keys, we are ready to test.
+Next we use an mpr121 capacitive touch sensor. With all the alligator clips attached to our copper 2D piano keys, we are ready to test. During the testing process we tweaked our code mutiple times to account for different issues. While the pianos worked perfectly fine by themselves, there did seem to be an issue with sending data between both. Originally during our previous testing phase, we had used UDP with a deidcated reciever and transmitter. However, one we had both pianos transmitting and recieving, there turned out to be some issues as it is difficult under the UDP protocol to send and recieve at the same time. This is due to the fact that both pianos are essentially clients and servers. To remedy this, we switched to using the MQTT protocol as Cornell has a dedicated broker which can handle all intermediary communication.
 
 https://user-images.githubusercontent.com/112603386/207701316-f26428f6-9e98-4399-bb6e-1b2f7bd7c155.mp4
 
@@ -115,7 +121,7 @@ We also learned that detailed planning before the start of an experiment is extr
 
 We also learned to to efficiently have 2 raspberry pis communicate wirelessly with one another. While we did experiment with UDP and other network protocols, we did eventually end up going back to MQTT as it was lightweight and easy to use based on past experience. Further than this project that functionality can have many implications with very neat use cases. 
 
-One thing we wish we knew at the start of the project was that our implementation of the multiplexor would not end up working. We spent a long time trying to get the multiplexor working and in the end had to pivot and think of a creative way to signify each key individually using a maximum of 9 GPIO outputs which corresponds to 9 LEDs that we can toggle on/off. If we knew that time spent on the multiplexor would be for nothing, we would have used that time to make our keys 3 dimensional rather than 2 dimensional with copper tape. We believe the 3 dimensional keys would have made the user experience with our device more interactive and fun.
+One thing we wish we knew at the start of the project was that our implementation of the decoder would not end up working. We spent a long time trying to get the decoder working and in the end had to pivot and think of a creative way to signify each key individually using a maximum of 9 GPIO outputs which corresponds to 9 LEDs that we can toggle on/off. If we knew that time spent on the decoder would be for nothing, we would have used that time to make our keys 3 dimensional rather than 2 dimensional with copper tape. We believe the 3 dimensional keys would have made the user experience with our device more interactive and fun.
 
 Another thing we wish we knew was how important having the higher octave C note would be. We only had 12 keys meaning we had one key for every note in a chromatic scale, however many songs use 2 of the same note. We wish we would have added more keys but this was difficult due to the mpr121 sensor only having 12 inputs as well as our bottleneck on GPIO pins.
 
