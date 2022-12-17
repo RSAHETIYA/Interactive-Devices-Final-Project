@@ -76,6 +76,11 @@ We can see above that the design is working properly. The LEDs all work and when
 All code can be found in the Github files listed at the top of this repository. PianoTutor is the code that makes the pianos make sounrs. Tramsmitter and Receiver is the code that allows the pianos to talk to one another so they can control each others LEDs remotely. 
 
 5. Video of someone using your project
+
+Here is a storybaord of how an intended interaction would look like:
+
+![pianoStoryboard](https://user-images.githubusercontent.com/112603386/208217610-31778336-420b-4e92-ad8a-a2959d0a41bd.png)
+
   
   We have had many people test our product, and should have filmed more of them! We did capture two encounters however.
   
