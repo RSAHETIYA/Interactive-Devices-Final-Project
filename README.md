@@ -125,7 +125,7 @@ One thing we wish we knew at the start of the project was that our implementatio
 
 Another thing we wish we knew was how important having the higher octave C note would be. We only had 12 keys meaning we had one key for every note in a chromatic scale, however many songs use 2 of the same note. We wish we would have added more keys but this was difficult due to the mpr121 sensor only having 12 inputs as well as our bottleneck on GPIO pins.
 
-Overall, we believe that while we did fail to implement some aspects of our project plan that would have enhanced the overall user process, we did come up with some creative workarounds that eventually led to a final project we are proud of.
+Overall, we believe that while we did fail to implement some aspects of our project plan that would have enhanced the overall user experience, we did come up with some creative workarounds that eventually led to a final project we are proud of.
 
 ## 7. Group work distribution questionnaire
 Both of us, Sam and Rahul, shared the work on all aspects of the project. We both talked about the idea behind the product, we both talked about what parts to order, we both worked on the code, we both worked on the housing, we both worked on the soldering, we both worked on the spacing of the LEDs, we both worked on the actual taping of the copper tape to the piano keys, and we both tested with users seperately. While distribution of each task was not entirely equal, we did play to our respective strengths to be more efficient. We communicated early and often, and overall, the team was a success.
