@@ -49,9 +49,10 @@ The biggest stretch for this project is making and implementing the Simon game f
 
 First we had to design our Piano Box, laser cut it, and glue it together.
 We designed our box to have a base of 7 inches by 11 inches, with a height of 4 inches. We used finger edge joints so that each face of the box would fit together well. We cut the roof of the device in half so that we could give our device more of a piano look. This also let the front face of the device sit halfway into the depth of the box giving it the correct cosmetic look of a piano. The front face of the box has 12 holes for the LEDs to sit in. Each of these holes has to fit a 3mm diameter LED, so we made the holes 3.5 mm to account for error.
+
 ![emptyBox](https://user-images.githubusercontent.com/112603386/207697881-3df0dcbc-65dd-4b0e-9f24-cb697f526d99.jpeg)
 
-The keys of our device extends from the back of the box to the front, hanging over the front of the base by around 2.5 inches. Again, this is to give our box the look and feel of a real piano. We had an idea for how to make the keys 3 dimensional, but after hitting a few roadblocks and time constraints, we chose to pivot to a 2-dimensional key implementation. Our keyboard was a piece of cardboard, cut to the dimensions of the box, that we hand-drew piano keys onto. Because we only used 12 keys we made th ekeys as big as they could be for the size of the housing.
+The keys of our device extends from the back of the box to the front, hanging over the front of the base by around 2.5 inches. Again, this is to give our box the look and feel of a real piano. We had an idea for how to make the keys 3 dimensional, but after hitting a few roadblocks and time constraints, we chose to pivot to a 2-dimensional key implementation. Our keyboard was a piece of cardboard, cut to the dimensions of the box, that we hand-drew piano keys onto. Because we only used 12 keys we made the keys as big as they could be for the size of the housing. We then taped copper tape to the top side of our cardboard so we could attach a capacitive touch sensor to this keyboard. By then attaching alligator clips from the mpr121 capacitive touch sensor to each individual key, we are able to decipher the inputs from our users.
 
 Next we had to add all of our LEDs to the product. The goal was to have a dedicated LED for each of the 12 keys in a musical octave, however due to the lack of available GPIO pins on each of our Raspberry Pis we ran into an issue. Our TFT screens (which are used to connect the raspberry pi to the mp121 capacitive touch sensor) were taking up some of these GPIO pins so we were left with only 9 per Raspberry Pi. To fix this issue we planned on implementing a multiplexor to split the logic from some of these GPIO pins to make the voltage levels control multiple LEDs.
 
@@ -64,14 +65,14 @@ We are both eperienced at soldering, but we made one mistake - assuming the Make
 
 To fix this issue we brainstormed how we might be able to pivot to not using the multiplexor. How could we best represent each of the 12 keys with only 9 available GPIO pins. We came up with an idea that would be symmetrical and evenly distributed across the board. Instead of having each note be represented by it's own individual LED, we will have only the white keys with LEDs housed above them. This way when a user hits a black key, this can be represented by the surrounding white keys to the left and right of this black key light up. Now single LEDs represent white keys, and double LEDs represent black keys (in the middle of the 2 LEDs).
 
-After we figured this out we cut a hole in the back of our piano boxes to be able to snake out the power cord and webcam cables out of the back.
+After we figured this out we cut a hole in the back of our piano boxes to be able to snake out the power cord and webcam (which is used as a speaker for this device) cables out of the back.
 
 Now we attached the LEDs on the protoboards to the inside of the front face of our board, taped them down to be secure, and fit in the Raspberry Pi with all the alligator clips attached to a MFR capacitive touch sensor board. 
 
 
 ![bothNoTop](https://user-images.githubusercontent.com/112603386/207701128-3e72a2a3-2f06-410e-983f-fbf2c40d9311.jpeg)
 
-With all the alligator clips attached to our copper 2D piano keys, we are ready to test.
+Next we use an mpr121 capacitive touch sensor attached  With all the alligator clips attached to our copper 2D piano keys, we are ready to test.
 
 
 https://user-images.githubusercontent.com/112603386/207701316-f26428f6-9e98-4399-bb6e-1b2f7bd7c155.mp4
