@@ -89,6 +89,12 @@ All code can be found in the Github files listed at the top of this repository. 
   
 Below is a test with one user where the video unfortunately starts after I tought our user the C Blues scale using the LEDs and him not looking at my fingers. While this part of the interaction was not captured, the second half of our interaction was captured where we are still both interacting with each piano and I am showing him more functionality of how the piano can arpeggiate notes in a fun way.
   
+Here is a demo video of how an interaction can work to teach someone the C Blues scale on a piano without looking at each other hands, only using the device as intended:
+
+
+https://user-images.githubusercontent.com/112603386/208215125-62527cbc-b175-450a-87de-98e385223295.mov
+
+Here is a user test from class:
 
 https://user-images.githubusercontent.com/112603386/207703890-32ca8f64-c52b-4e9d-b117-49368c32c527.mov
 
@@ -104,7 +110,14 @@ https://user-images.githubusercontent.com/112603386/207704002-e08ac922-6cd1-4f9e
 6. Reflections on process (What have you learned or wish you knew at the start?)
  We wish we had known that the multiplexor implementation would prove to be so difficult to get working correctly. If we had known this we would have spent that time improving the keys and making them 3D rather than 2D. While the 2D implementation works the same way in terms of functionality, we believe 3D keys would be more fun for our users.
  
- We learned that sometimes people get excited about unintended outcomes of a project. Because the musical library we used to form the synth sounds did not play multiple notes at once, we used a while loop to loop through sounds when a user plays a chord. This made an arpeggiated chord instead of a continuous one. This was a workaround for us to be able to play all the notes someone presses as long as they hold the chord out long enough for the code to loop through each held note. However, we learned when user testing that this was often a favorite feature of our users. It made them feel more talented at piano because of how fast the notes were playing. One lesson learned here is how important user testing is; what was a side feature to us the designers was a showcase feature to the users themselves.
+I learned that sometimes people get excited about unintended outcomes of a project. Because the musical library we used to form the synth sounds did not play multiple notes at once, we used a while loop to loop through sounds when a user plays a chord. This made an arpeggiated chord instead of a continuous one. This was a workaround for us to be able to play all the notes someone presses as long as they hold the chord out long enough for the code to loop through each held note. However, we learned when user testing that this was often a favorite feature of our users. It made them feel more talented at piano because of how fast the notes were playing. One lesson learned here is how important user testing is; what was a side feature to us the designers was a showcase feature to the users themselves.
 
+I also learned that detailed planning before the start of an experiment is extremely important. While we did prototype before we started laser cutting, there were a few things we overlooked. We forgot to add a slot to snake out the power cords and webcam cords. This was fine in the end but we had to make a cut by hand, it could have been much more precise if we designed this into our laser cutting file.
+
+I also learned to to efficiently have 2 raspberry pis communicate wirelessly with one another. Further than this project that functionality can have many implications with very neat use cases.
+
+One thing I wish I knew at the start of the project was that our implementation of the multiplexor would not end up working. We spent a long time trying to get the multiplexor working and in the end had to pivot and think of a creative way to signify each key individually using a maximum of 9 GPIO outputs which corresponds to 9 LEDs that we can toggle on/off. If I knew that time spent on the multiplexor would be for nothing, I would have used that time to make our keys 3 dimensional rather than 2 dimensional with copper tape. I believe the 3 dimensional keys would have made the user experience with our device more interactive and fun.
+
+Another thing I wish I knew was how important having the higher octave C note would be. We only had 12 keys meaning we had one key for every note in a chromatic scale, however many songs use 2 of the same note. I wish we would have added more keys but this was difficult due to the mpr121 sensor only having 12 inputs as well as our bottleneck on GPIO pins.
 7. Group work distribution questionnaire
  Both of us, Sam and Rahul, shared the work fairly well on all aspects of the project. We both talked about the idea behind the product, we both talked about what parts to order, we both worked on the code, we both worked on the housing, we both worked on the soldering, we both worked on the spacing of the LEDs, we both worked on the actual taping of the copper tape to the piano keys, and we both tested with users seperately. We communicated early and often and overall the team was a success.
