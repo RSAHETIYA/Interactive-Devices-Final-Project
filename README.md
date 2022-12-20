@@ -1,5 +1,8 @@
 # Interactive-Devices-Final-Project
 
+Sam Willenson: https://github.com/swillenson/Interactive-Lab-Hub
+Rahul Sahetiya: https://github.com/RSAHETIYA/Interactive-Lab-Hub
+
 ## 1. Project plan: Big idea, timeline, parts needed, fall-back plan.
 
 ### Big Idea:
@@ -68,6 +71,8 @@ Here are images of us soldering the decoder into the design:
 We are both eperienced at soldering, but we made one mistake - assuming the Maker Lab had Leaded solder. Because of the lack of Lead solder, this whole process proved to be more time consuming and difficult than originally expected. When our first board was finished, we tested the device to see if each LED can be powered on individually. Unfortunately, something unexpected was happening and we were getting unexpected LEDs turning on: for example LED 5 powering on when we want LED 2 on, and multiple LEDs powering on at the same time. 
 
 To fix this issue we brainstormed how we might be able to pivot to not using the decoder. How could we best represent each of the 12 keys with only 9 available GPIO pins. We came up with an idea that would be symmetrical and evenly distributed across the board. Instead of having each note be represented by it's own individual LED, we will have only the white keys with LEDs housed above them. This way when a user hits a black key, this can be represented by the surrounding white keys to the left and right of this black key light up. Now single LEDs represent white keys, and double LEDs represent black keys (in the middle of the 2 LEDs).
+
+![wiring](imgs/wiring.jpeg)
 
 After we figured this out we cut a hole in the back of our piano boxes to be able to snake out the power cord and webcam (which is used as a speaker for this device) cables out of the back.
 
