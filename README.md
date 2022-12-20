@@ -1,6 +1,7 @@
 # Interactive-Devices-Final-Project
 
 Sam Willenson: https://github.com/swillenson/Interactive-Lab-Hub
+
 Rahul Sahetiya: https://github.com/RSAHETIYA/Interactive-Lab-Hub
 
 ## 1. Project plan: Big idea, timeline, parts needed, fall-back plan.
