@@ -1,3 +1,9 @@
+Below is a copy of the README found below:
+[Final Project](https://github.com/swillenson/Interactive-Devices-Final-Project)<!--[](Final%20Project/)-->
+
+Please use the above link to view all code etc.
+
+
 # Interactive-Devices-Final-Project
 
 Sam Willenson: https://github.com/swillenson/Interactive-Lab-Hub
