@@ -1,4 +1,4 @@
-# Interactive-Devices-Final-Project
+# The WeBoard
 
 Sam Willenson: https://github.com/swillenson/Interactive-Lab-Hub
 
